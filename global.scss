@@ -1,0 +1,134 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import '@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '@ionic/angular/css/padding.css';
+// Many warnings are caused when float elements are imported
+// @import "@ionic/angular/css/float-elements.css"; //NOSONAR
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
+
+@import 'bootstrap-scss/bootstrap.scss';
+
+/* ==== Remove scroll on number input ===== */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-content {
+  @extend .bg-white;
+  @extend .rounded;
+  @extend .shadow;
+  @extend .my-4;
+  @extend .px-3;
+  @extend .py-4;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ============= Font sizes =============== */
+
+h1 {
+  @extend .ff-theme-subtitle;
+  @extend .fs-3;
+}
+
+h2 {
+  @extend .ff-theme-subtitle;
+  @extend .fs-5;
+}
+
+h3 {
+  @extend .ff-theme-subtitle;
+  @extend .fs-6;
+}
+
+.fs-7 {
+  font-size: 0.8rem;
+}
+
+.fs-8 {
+  font-size: 0.7rem;
+}
+
+/* ============== Components ========================== */
+
+ion-modal.alert-modal {
+  --width: 90%;
+  --height: fit-content;
+  --border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 576px) {
+  ion-modal.alert-modal {
+    --width: fit-content;
+  }
+}
+
+/* ============== Animations ========================== */
+
+.fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tracking-in-expand {
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
